@@ -18,7 +18,7 @@ PROXY_DICT = {
 def temperature():
     zipcode = request.form['zip']
     r = requests.get('http://api.openweathermap.org/data/2.5/weather?zip=' +
-                     zipcode+',pl&appid=ae75f9863b9eac983c31433a0edfe79d', proxies=PROXY_DICT)
+                     zipcode+',pl&appid=ae75f9863b9eac983c31433a0edfe79d')
     json_object = r.json()
     temp_k = float(json_object['main']['temp'])
     temp_f = (temp_k - 273.15)  # * 1.8 + 32
